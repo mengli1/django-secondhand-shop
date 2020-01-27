@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="surplus_transaction" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1UxdVCNiqzqRy5cwlGVCnWALerf" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps\order" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\templates" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\surplus_transaction\utils" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\static\js" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\templates" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps\order" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\static\img" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps\notice" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.index.html">
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/surplus_transaction/templates/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="surplus_transaction" type="Python.DjangoServer" factoryName="Django server">
+      <module name="surplus_transaction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.index.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="" />
+      <created>1576302201200</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1576302201200</updated>
+      <workItem from="1576302213164" duration="23097000" />
+      <workItem from="1576373586540" duration="31052000" />
+      <workItem from="1576891616000" duration="21946000" />
+      <workItem from="1576918058242" duration="18650000" />
+      <workItem from="1577531306441" duration="20000" />
+      <workItem from="1578117141313" duration="2758000" />
+      <workItem from="1579226351896" duration="251092000" />
+      <workItem from="1579832305593" duration="42700000" />
+      <workItem from="1580026331524" duration="6710000" />
+      <workItem from="1580033139684" duration="19576000" />
+      <workItem from="1580106327336" duration="2464000" />
+      <workItem from="1580108807116" duration="8232000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="669" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580032624116">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="669" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1580032624116" />
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579614098555">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579614098555" />
+    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1579854260025">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579854260025" />
+    <state x="823" y="81" key="SettingsEditor" timestamp="1580120523322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="823" y="81" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1580120523322" />
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1580106727295">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1580106727295" />
+    <state x="817" y="133" width="1080" height="686" maximized="true" key="dock-window-2" timestamp="1580106288272">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="817" y="133" width="1080" height="686" maximized="true" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1580106288272" />
+    <state x="0" y="441" width="1893" height="686" key="dock-window-3" timestamp="1579858579031">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="0" y="441" width="1893" height="686" key="dock-window-3/0.0.1920.1040@0.0.1920.1040" timestamp="1579858579031" />
+    <state x="825" y="390" width="1353" height="739" key="dock-window-4" timestamp="1579693339143">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="825" y="390" width="1353" height="739" key="dock-window-4/0.0.1920.1040@0.0.1920.1040" timestamp="1579693339143" />
+    <state x="520" y="222" width="974" height="1047" key="dock-window-5" timestamp="1580106292866">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="520" y="222" width="974" height="1047" key="dock-window-5/0.0.1920.1040@0.0.1920.1040" timestamp="1580106292866" />
+    <state x="301" y="80" width="974" height="1047" key="dock-window-6" timestamp="1579758854925">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="301" y="80" width="974" height="1047" key="dock-window-6/0.0.1920.1040@0.0.1920.1040" timestamp="1579758854925" />
+    <state x="195" y="80" width="974" height="1047" key="dock-window-7" timestamp="1579778718086">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="195" y="80" width="974" height="1047" key="dock-window-7/0.0.1920.1040@0.0.1920.1040" timestamp="1579778718086" />
+    <state x="288" y="283" width="1060" height="696" key="find.popup" timestamp="1579700314850">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="288" y="283" width="1060" height="696" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579700314850" />
+    <state x="1007" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1580102746245">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1007" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580102746245" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://E:/代码/Django/env2/dailyfresh/dailyfresh/urls.py</url>
+          <line>15</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="django-line">
+          <url>file://$PROJECT_DIR$/templates/goodalterimage.html</url>
+          <line>4</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

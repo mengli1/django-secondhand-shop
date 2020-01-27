@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}创建订单{% endblock title %}
+{% block topfiles %}
+    <style>
+        #table_s tr td {
+            border: 1px #818E96 solid;
+            word-break: break-word;
+        }
+    </style>
+
+
+{% endblock topfiles %}
+{% block body %}
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 name-top">
+        <div>
+            <h2>创建订单</h2>
+        </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <blockquote>
+            确认收货地址
+        </blockquote>
+        <div style="padding-bottom: 20px">
+            <dl>
+                <dt>寄送到：</dt>
+                <input type="hidden" name="addr_id" value="{{ addr.id }}" checked>{{ addr.addr }} （{{ addr.receiver }}收） {{ addr.phone }}
+            </dl>
+            <a href="{% url 'user:altaddr' %}?id={{ addr.id }}" class="btn btn-info">编辑收货地址</a>
+        </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <blockquote>
+            支付方式
+        </blockquote>
+        <div style="padding-bottom: 20px">
+            <input type="hidden" name="pay_style" value="3" checked><img src="{% static 'img/zfb.png' %}" alt="">
+        </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" style="padding-bottom: 20px;">
+        <blockquote>
+            商品信息
+        </blockquote>
+        <table style="width: 100%;" id="table_s">
+            <tr>
+                <td>商品名称</td>
+                <td>商品图片</td>
+                <td>所属用户</td>
+                <td>商品价格</td>
+            </tr>
+            <tr>
+                <td>{{ good.title }}</td>
+                <td><img src="{{ settings }}{{ image }}" alt="" style="width: 200px;height: 200px"></td>
+                <td>{{ good.user.username }}</td>
+                <td>{{ good.price }}元</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <blockquote>
+            总金额结算
+        </blockquote>
+    </div>
+    <div class="col-md-1 col-md-offset-9 col-sm-10 col-sm-offset-1">
+        <div>
+            <div class="transit">运费：<b>{{ transit_price }}元</b></div>
+            <div class="total_pay">实付款：<b>{{ total_pay }}元</b></div>
+        </div>
+        <div>
+            <div class="order_submit clearfix">
+                {% csrf_token %}
+                <button class="form-control btn btn-primary" id="commit_order">提交订单</button>
+            </div>
+        </div>
+    </div>
+    <div class="popup_con">
+		<div class="popup">
+			<p>订单提交成功！</p>
+		</div>
+
+		<div class="mask"></div>
+	</div>
+    <script>
+        $("#commit_order").click(function () {
+            addr_id = $('input[name="addr_id"]').val();
+            pay_method = $('input[name="pay_style"]').val();
+            good_id = {{ good.id }};
+            csrf = $('input[name="csrfmiddlewaretoken"]').val();
+            params = {'addr_id':addr_id, 'pay_method':pay_method, 'good_id':good_id,
+                        'csrfmiddlewaretoken':csrf};
+            $.post("{% url 'order:commit' %}", params, function (data) {
+                if (data.res == 5){
+                    // 创建成功
+                    localStorage.setItem('order_finish',2);
+                    $('.popup_con').fadeIn('fast', function() {
+
+                        setTimeout(function(){
+                            $('.popup_con').fadeOut('fast',function(){
+                                window.location.href = '{% url 'goods:detail' %}?id={{ good.id }}';
+                            });
+                        },2)
+
+                    });
+                }
+                else{
+                    alert(data.errmsg)
+                }
+            })
+        })
+    </script>
+{% endblock body %}

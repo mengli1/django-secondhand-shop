@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}编辑地址{% endblock title %}
+
+{% block topfiles %}
+{% endblock topfiles %}
+
+{% block body %}
+    <!--名称框-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 name-top">
+        <div>
+            <h2>编辑地址信息</h2>
+        </div>
+    </div>
+    <!--修改信息表单-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <form method="post" action="{% url 'user:creaddr' %}" enctype="multipart/form-data" id="issue">
+            {% csrf_token %}
+            <div class="form-group good_form">
+                <label for="name">收件人</label>
+                <input type="text" class="form-control" name='name' id="name" placeholder="收件人">
+            </div>
+            <div class="form-group good_form">
+                <label for="addr">收件地址</label>
+                <input type="text" class="form-control" name='addr' id="addr" placeholder="收件地址">
+            </div>
+            <div class="form-group good_form">
+                <label for="zipcode">邮政编码</label>
+                <input type="text" class="form-control" name='zipcode' id="zipcode" placeholder="邮政编码">
+            </div>
+            <div class="form-group good_form">
+                <label for="phone">联系电话</label>
+                <input type="tel" class="form-control" name='phone' id="phone" placeholder="联系电话">
+            </div>
+            <div class="form-group good_form">
+                <div class="checkbox">
+                    <label>
+                        {% if data.is_default %}
+                            <input type="checkbox" name="default" value="1" checked>
+                        {% else %}
+                            <input type="checkbox" name="default" value="0">
+                        {% endif %}
+                        设为默认地址
+                    </label>
+                </div>
+            </div>
+            <div class="form-group good_form" style="text-align: center">
+                <input type="submit" class="btn btn-primary form-control" value="提交" id="tj" onclick="tjclick(this)">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <p style="text-align: center;color: red">{{ msg }}</p>
+    </div>
+{% endblock body %}

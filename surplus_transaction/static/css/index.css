@@ -1,0 +1,125 @@
+table tr td {
+    text-align: center;
+}
+
+table tr th {
+    text-align: center;
+}
+
+/*index.html*/
+.head-portrait {
+    width: 21px;
+    height: 21px;
+}
+
+.slideshow {
+    padding-top: 60px;
+}
+
+.show-good-header {
+    text-align: center;
+}
+
+.classify {
+    text-align: center;
+}
+
+.footer-content {
+    margin-top: 20px;
+    border-top: 1px solid;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.foot_link a {
+    color: #5e5e5e;
+}
+
+.title_h3 {
+    max-width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.price_p {
+    font-weight: bold;
+    color: red;
+    font-style: italic;
+    font-size: 20px;
+}
+
+/*good.html*/
+.name-top {
+    padding-top: 50px;
+}
+
+.name-top h2 {
+    text-align: center;
+}
+
+
+/*gooddetail.html*/
+.head-portrait {
+    width: 21px;
+    height: 21px;
+}
+
+.head-details {
+    margin-bottom: 10px;
+}
+
+.head-details-image {
+    width: 60px;
+    height: 60px;
+}
+
+.price-span {
+    color: red;
+    font-weight: bold;
+    font-size: 25px;
+    font-style: italic;
+    margin-right: 10px;
+}
+
+.good-detail {
+    margin-top: 30px;
+}
+
+.others {
+    list-style: none;
+}
+
+.others li {
+    display: inline-block;
+    padding-right: 20px;
+    height: 66px;
+    line-height: 66px;
+}
+
+.others li:last-child {
+    float: right;
+}
+
+.good-info {
+    text-indent: 2em;
+    word-wrap: break-word;
+}
+
+.comment-info {
+    list-style: none;
+}
+
+.comment-info ul {
+    list-style: none;
+}
+
+.comment-info li {
+    margin-top: 15px;
+    padding: 10px 10px 10px 10px;
+    background-color: rgba(214, 214, 214, 0.4);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    width: 96%;
+    border-radius: 10px;
+}

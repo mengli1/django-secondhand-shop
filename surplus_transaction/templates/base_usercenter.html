@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}用户中心{% endblock title %}
+{% block topfiles %}
+    <style>
+        .name-top {
+            padding-top: 50px;
+        }
+
+        .name-top h2 {
+            text-align: center;
+            font-style: italic;
+        }
+
+        .user-table {
+            margin-top: 10px;
+            font-weight: 800;
+        }
+
+        .user-button {
+            margin-top: 20px;
+        }
+
+        #title_text {
+            width: 100px;
+            display: block;
+            overflow: hidden;
+            word-break: keep-all;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin: 0 auto;
+        }
+    </style>
+{% endblock topfiles %}
+{% block body %}
+    <!--名称框-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 name-top">
+        <div>
+            <h2>用户中心</h2>
+        </div>
+    </div>
+
+
+    <!--选项栏-->
+    <div class="raw">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <div class="col-md-2 col-sm-2" style="">
+                <ul class="nav nav-pills nav-stacked nav-pills-stacked-example">
+                    <li role="presentation" id="myinfo"><a href="{% url 'user:center' %}">我的信息</a></li>
+                    <li role="presentation" id="mygoods"><a href="{% url 'user:mygoods' %}">我的发布</a></li>
+                    <li role="presentation" id="mynotice"><a href="{% url 'user:mynotices' %}">我的公告</a></li>
+                    <li role="presentation" id="myorder"><a href="{% url 'user:myorders' %}">我的订单</a></li>
+                    <li role="presentation" id="myaddr"><a href="{% url 'user:myaddrs' %}">收货地址</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10 col-sm-10">
+                {% block detail %}{% endblock detail %}
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            switch ({{ option }}) {
+                case 0:
+                    $('#myinfo').addClass('active');
+                    break;
+                case 1:
+                    $('#mygoods').addClass('active');
+                    break;
+                case 2:
+                    $('#mynotice').addClass('active');
+                    break;
+                case 3:
+                    $('#myorder').addClass('active');
+                    break;
+                case 4:
+                    $('#myaddr').addClass('active');
+                    break;
+            }
+        })
+    </script>
+{% endblock body %}

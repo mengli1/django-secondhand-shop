@@ -1,0 +1,185 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}编辑图片{% endblock title %}
+
+{% block topfiles %}
+    <style>
+        li {
+            list-style: none;
+        }
+
+        .imgFileUploade {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .imgFileUploade .header {
+            height: 50px;
+            width: 100%;
+            line-height: 50px;
+        }
+
+        .imgFileUploade .header span {
+            display: block;
+            float: left;
+        }
+
+        .imgFileUploade .header span.imgTitle {
+            line-height: 50px;
+        }
+
+        .imgFileUploade .header span.imgTitle b {
+            color: red;
+            margin: 0 5px;
+            line-height: 57px;
+            display: block;
+            float: right;
+            font-size: 20px;
+        }
+
+        .imgFileUploade .header span.imgClick {
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            cursor: pointer;
+            background: url({% static 'picture/addUpload.png' %}) no-repeat center center;
+            background-size: cover;
+        }
+
+        .imgFileUploade .header span.imgcontent {
+            color: #999;
+            margin-left: 120px;
+            line-height: 50px;
+        }
+
+        .imgFileUploade .imgAll {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .imgFileUploade .imgAll ul:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: ".";
+            clear: both;
+            height: 0
+        }
+
+        .imgFileUploade .imgAll li {
+            width: 100px;
+            height: 100px;
+            border: solid 1px #ccc;
+            margin: 8px 5px;
+            float: left;
+            position: relative;
+            box-shadow: 0 0 10px #eee;
+        }
+
+        .imgFileUploade .imgAll li img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .delImg {
+            position: absolute;
+            top: -10px;
+            right: -7px;
+            width: 22px;
+            height: 22px;
+            background: #000;
+            border-radius: 50%;
+            display: block;
+            text-align: center;
+            line-height: 22px;
+            color: #fff;
+            font-weight: 700;
+            font-style: normal;
+            cursor: pointer;
+        }
+
+        .box2 {
+            border: solid 1px #ccc;
+        }
+    </style>
+
+{% endblock topfiles %}
+
+{% block body %}
+    <!--名称框-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 name-top">
+        <div>
+            <h2>编辑图片</h2>
+        </div>
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        {% for image in images %}
+            <div class="col-md-4 col-sm-4 image_show" style="border: solid #ccc 1px">
+                <div>
+                    <img data-src="holder.js/200x200" class="img-rounded" data-holder-rendered="true" title="头像"
+                         style="width: 200px;height: 200px" id="upLoadImg" src="{{ settings }}{{ image.image }}"/>
+                    <button href="{% url 'goods:delete_image' %}?id={{ image.id }}" class="btn btn-danger delete">
+                        删除
+                    </button>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <form method="post" action="{% url 'goods:alter_images' %}" enctype="multipart/form-data" id="issue">
+            {% csrf_token %}
+            <div class="form-group good_form">
+                <label for="picture">上传图片</label>
+                <div class="box2" style="width:auto;margin:10px auto"></div>
+                <div class="row" id="uploadImage">
+                </div>
+            </div>
+            <input type="hidden" class="form-control" name='id' value="{{ goods_id }}">
+            <div class="form-group good_form" style="text-align: center">
+                <input type="submit" class="btn btn-warning form-control" value="提交" id="tj" onclick="tjclick(this)">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <p style="text-align: center;color: red">{{ msg }}</p>
+    </div>
+    <script src="{% static 'js/imgFileupload.js' %}"></script>
+    <script>
+        var len = 9 - $(".image_show").length;
+        var imgFile1 = new ImgUploadeFiles('.box2', function (e) {
+            this.init({
+                MAX: len,
+                MH: 1800, //像素限制高度
+                MW: 1900, //像素限制宽度
+                callback: function (arr) {
+                    console.log(arr)
+                }
+            });
+        });
+    </script>
+    <script>
+        $('.delete').click(function () {
+            $.ajax({
+                type: 'get',
+                url: $(this).attr('href'),
+                dataType: "json",
+                success: function (data) { //返回json结果
+                    if (data.status === 'succeed') {
+                        alert("删除成功");
+                        window.location.reload();
+                    } else {
+                        alert("删除失败");
+                    }
+                },
+                error: function () {
+                    alert('1.网络错误，请稍后再试！\n2.如未登录，请先登录！');
+                }
+            });
+        })
+    </script>
+{% endblock body %}

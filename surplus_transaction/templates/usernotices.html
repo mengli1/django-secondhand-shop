@@ -1,0 +1,61 @@
+{% extends 'base_usercenter.html' %}
+{% load staticfiles %}
+
+{% block detail %}
+    <table class="table table-striped">
+        <thead class="table-head">
+        <tr>
+            <th>公告标题</th>
+            <th>公告浏览量</th>
+            <th>发布时间</th>
+            <th>商品操作</th>
+        </tr>
+        </thead>
+        <tbody class="table-body">
+        {% for notice in data_page %}
+            <tr>
+                <td><a id="title_text"
+                       href="{% url 'notice:detail' %}?id={{ notice.id }}">{{ notice.title }}</a></td>
+                <td>{{ notice.number_view }}</td>
+                <td>{{ notice.update_time }}</td>
+                <td>
+                    <a href="{% url 'notice:alter' %}?id={{ notice.id }}" class="btn btn-warning">内容编辑</a>
+                    <a href="{% url 'notice:delete' %}?id={{ notice.id }}" class="btn btn-danger">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+
+        </tbody>
+    </table>
+    <!--分页-->
+    {% if length %}
+        <div class="col-md-12 col-sm-12" style="text-align: center">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    {% if data_page.has_previous %}
+                        <li>
+                            <a href="{% url 'user:mynotices' %}?page={{ data_page.previous_page_number }}">
+                                上一页
+                            </a></li>
+                    {% endif %}
+                    {% for pindex in pages %}
+                        {% if pindex == data_page.number %}
+                            <li class="active"><a
+                                    href="{% url 'user:mynotices' %}?page={{ pindex }}"
+                            >{{ pindex }}</a></li>
+                        {% else %}
+                            <li>
+                                <a href="{% url 'user:mynotices' %}?page={{ pindex }}">{{ pindex }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if data_page.has_next %}
+                        <li>
+                            <a href="{% url 'user:mynotices' %}?page={{ data_page.next_page_number }}">下一页</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    {% endif %}
+{% endblock detail %}

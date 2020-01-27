@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}商品详情{% endblock title %}
+{% block topfiles %}
+    <style>
+        .head-details {
+            margin-bottom: 10px;
+        }
+
+        .head-details-image {
+            width: 60px;
+            height: 60px;
+        }
+
+        .price-span {
+            color: red;
+            font-weight: bold;
+            font-size: 25px;
+            font-style: italic;
+            margin-right: 10px;
+        }
+
+        .good-detail {
+            margin-top: 30px;
+        }
+
+        .detail_title {
+            width: 100%;
+            height: auto;
+            word-wrap: break-word;
+            word-break: break-all;
+            overflow: hidden;
+        }
+
+        .others {
+            list-style: none;
+        }
+
+        .others li {
+            display: inline-block;
+            padding-right: 20px;
+            height: 66px;
+            line-height: 66px;
+        }
+
+        .others li:last-child {
+            float: right;
+        }
+
+        .good-info {
+            word-wrap: break-word;
+        }
+
+        .comment-info {
+            list-style: none;
+        }
+
+        .comment-info ul {
+            list-style: none;
+        }
+
+        .comment-info li {
+            margin-top: 15px;
+            padding: 10px 10px 10px 10px;
+            background-color: rgba(214, 214, 214, 0.4);
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            width: 96%;
+            border-radius: 10px;
+        }
+    </style>
+{% endblock topfiles %}
+{% block body %}
+    <!--公告详情-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 good-detail">
+        <div class="page-header head-details page-header" style="border-bottom: #3F3F3F solid 1px;padding-bottom: 20px">
+            <ul class="others">
+                <li>
+                    <img data-src="holder.js/" class="img-circle head-details-image"
+                         src="{{ settings }}{{ user_info.head_portrait }}"
+                         alt="...">
+                </li>
+                <li>
+                    <span>{{ user_info.username }}</span>
+                </li>
+                <li>
+                    <span>最近编辑：{{ notice.update_time }}</span>
+                </li>
+                <li>
+                    <span>浏览数：{{ notice.number_view }}</span>
+                </li>
+            </ul>
+        </div>
+        <div class="detail_title">
+            <h1 style="text-align: center">{{ notice.title }}</h1>
+        </div>
+        <div class="detail_title">
+            <p class="good-info">{% autoescape off %}{{ notice.detail }}{% endautoescape %}</p>
+        </div>
+        <div id="comment">
+            <blockquote>
+                全部留言
+            </blockquote>
+            <div class="input-group " id="message" style="">
+                {% csrf_token %}
+                <input type="text" class="form-control mess" placeholder="留言">
+                <span class="input-group-btn"><button class="btn btn-default" type="button"
+                                                      onclick='mes_click(this,"{% url 'notice:message' %}","{{ notice.id }}")'>留言</button></span>
+            </div>
+            <ol class="comment-info">
+                {% for mes in message %}
+                    <li>
+                        <div>
+                            <div>
+                                <div>
+                                    <img alt="" src="{{ settings }}{{ mes.mess.user.head_portrait }}" height="32"
+                                         width="32"
+                                         data-bd-imgshare-binded="1">
+                                    <cite class="fn">{{ mes.mess.user.username }}</cite><span class="reply"><a
+                                        rel="nofollow"
+                                        class="comment-reply-link" onclick="replay_click(this)">回复</a></span>
+                                </div>
+                                <div class="comment-meta2 commentmetadata">{{ mes.mess.create_time }}</div>
+                            </div>
+                            <p class="detail_title" >{{ mes.mess.message }}</p>
+                            <div class="input-group message2" style="display: none">
+                                <input type="text" class="form-control" placeholder="留言">
+                                <span class="input-group-btn"><button class="btn btn-default" type="button"
+                                                                      onclick='mes_click(this,"{% url 'notice:message' %}"
+                                                                              ,"{{ mes.mess.id }}")'>回复</button></span>
+                            </div>
+                        </div>
+                        <ul>
+                            {% for me in mes.reply %}
+                                <li>
+                                    <div>
+                                        <div>
+                                            <div>
+                                                <img alt=""
+                                                     src="{{ settings }}{{ me.user.head_portrait }}"
+                                                     height="32" width="32"
+                                                     data-bd-imgshare-binded="1">
+                                                <cite class="fn">{{ me.user.username }}</cite>
+                                            </div>
+                                            <div>{{ me.create_time }}</div>
+                                        </div>
+                                        <p class="detail_title">{{ me.leave_message }}</p>
+                                    </div>
+                                </li><!-- #comment-## -->
+                            {% endfor %}
+                        </ul><!-- .children -->
+                    </li>
+                {% endfor %}
+
+            </ol>
+        </div>
+    </div>
+    <script src="{% static 'js/ajax.js' %}"></script>
+{% endblock body %}

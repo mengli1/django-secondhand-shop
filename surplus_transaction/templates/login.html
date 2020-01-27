@@ -1,0 +1,57 @@
+{% extends 'base_login.html' %}
+
+{% block title %}登录{% endblock title %}
+
+{% block body  %}
+<section class="signin signup">
+    <div class="container">
+
+        <div class="sign-content">
+            <h2>登录</h2>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="signin-form">
+                        <form action="{% url 'user:login' %} " method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="username">用户名</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="用户名">
+                            </div>
+                            <div class="form-group">
+                                <label for="password">密码</label>
+                                <input type="password" class="form-control" id="password" name="password"
+                                       placeholder="密码">
+                            </div>
+                            <div class="form-group">
+                                <ul class="unstyled centered">
+                                    <li>
+                                        {% if checked %}
+                                            <input class="styled-checkbox" id="checkbox" name="checkbox" type="checkbox" checked="checked">
+                                            <label for="checkbox">记住用户名</label>
+                                            {% else %}
+                                            <input class="styled-checkbox" id="checkbox" name="checkbox" type="checkbox">
+                                            <label for="checkbox">记住用户名</label>
+                                        {% endif %}
+
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'user:retrieve' %}">忘记或密码?</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="signin-footer">
+                                <input type="submit" class="btn signin_btn btn-block" value="登录">
+                                <p>
+                                    还不会本站会员 ?
+                                    <a href="{% url 'user:register' %}">注册</a>
+                                </p>
+                                <p>{{ errmsg }}</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}

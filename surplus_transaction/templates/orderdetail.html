@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}订单详情{% endblock title %}
+{% block topfiles %}
+    <style>
+        .good-detail {
+            text-align: center;
+        }
+
+        .comment-info {
+            margin-top: 15px;
+            padding: 10px 10px 10px 10px;
+            background-color: rgba(214, 214, 214, 0.4);
+            -moz-border-radius: 10px;
+            -webkit-border-radius: 10px;
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+{% endblock topfiles %}
+{% block body %}
+    <!--名称框-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 good-detail">
+        <div class="page-header head-details page-header">
+            <h3>订单详情</h3>
+        </div>
+    </div>
+
+    <!--商品基本信息-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1"
+         style="border-bottom: 1px #ccc solid;padding-bottom: 10px">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{{ settings }}{{ image }}" alt="..." class="img-rounded"
+                     style="width: 400px;height: 400px">
+            </div>
+            <div class="col-md-8">
+                <p style="font-style: italic;font-size:20px">商品标题：{{ order.goods.title }}</p>
+                <p style="font-style: italic;font-size:20px">商品价格：{{ order.goods.price }}元</p>
+                <p style="font-style: italic;font-size:20px">商品发布地：{{ order.goods.addr }}</p>
+                <p style="font-style: italic;font-size:20px">商品运费：{{ order.transit_price }}元</p>
+                <p style="font-style: italic;font-size:20px">发布用户：{{ order.goods.user.username }}</p>
+            </div>
+        </div>
+    </div>
+    <!--商品订单信息-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <div style="padding-top: 10px">
+            <p style="font-size:15px">订单编号：{{ order.order_id }}</p>
+            <p style="font-size:15px">订单状态：{{ order.order_status }}</p>
+            <p style="font-size:15px">订单创建时间：{{ order.create_time }}</p>
+            {% if order.order_status == "已完成" %}
+                <p style="font-size:15px">订单完成时间：{{ order.update_time }}</p>
+            {% else %}
+                <p style="font-size:15px">订单更新时间：{{ order.update_time }}</p>
+            {% endif %}
+            <p style="font-size:15px">购买用户：{{ order.user.username }}</p>
+        </div>
+        {% if order.order_status == "已完成" %}
+            <div class="comment-info">
+                <p style="font-size:15px">订单评价：{{ order.comment_status }}
+                    {% autoescape off %}{{ order.comment }}{% endautoescape %}</p>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock body %}

@@ -1,0 +1,49 @@
+{% extends 'base_usercenter.html' %}
+{% load staticfiles %}
+{% block detail %}
+    <div class="Caddress">
+        {% for add in addr %}
+            <div class="col-md-12 add_mi" style="border:2px solid #ccc;margin:15px;padding:10px">
+                <div class="col-md-12">
+                    <p style="border-bottom:1px dashed #ccc;line-height:28px;">{{ add.receiver }}
+                        {% if add.is_default %}
+                            <span class="badge"
+                                  style="margin-left:10px;background-color:#fec418;color:#f2777a">默认地址</span>
+                        {% endif %}</p>
+                    <p>{{ add.addr }} </p>
+                    <p>{{ add.phone }}</p>
+                </div>
+                <div class="col-md-12">
+                    <a href="{% url 'user:altaddr' %}?id={{ add.id }}" class="btn btn-warning">编辑</a>
+                    {% if not add.is_default %}
+                        <button href="{% url 'user:defaddr' %}?id={{ add.id }}" class="btn btn-info defaddr">设为默认地址</button>
+                    {% endif %}
+                    <a href="{% url 'user:deladdr' %}?id={{ add.id }}" class="btn btn-danger">删除</a>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="col-md-12">
+            <a href="{% url 'user:creaddr' %}" class="btn btn-success form-control">添加新地址</a>
+        </div>
+    </div>
+    <script>
+        $('.defaddr').click(function () {
+            $.ajax({
+                type: 'get',
+                url: $(this).attr('href'),
+                dataType: "json",
+                success: function (data) { //返回json结果
+                    if (data.status === 'succeed') {
+                        alert("设置成功");
+                        window.location.reload();
+                    } else {
+                        alert("设置失败");
+                    }
+                },
+                error: function () {
+                    alert('1.网络错误，请稍后再试！\n2.如未登录，请先登录！');
+                }
+            });
+        })
+    </script>
+{% endblock detail %}

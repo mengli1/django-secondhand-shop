@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}发布闲置{% endblock title %}
+
+{% block topfiles %}
+    <script src="{% static 'js/distpicker.min.js' %}"></script>
+    <script src="{% static 'js/ckeditor/ckeditor-init.js' %}"></script>
+    <script src="{% static 'js/ckeditor/ckeditor/ckeditor.js' %}"></script>
+    <style>
+        li {
+            list-style: none;
+        }
+
+        .imgFileUploade {
+            width: 100%;
+            padding: 10px;
+        }
+
+        .imgFileUploade .header {
+            height: 50px;
+            width: 100%;
+            line-height: 50px;
+        }
+
+        .imgFileUploade .header span {
+            display: block;
+            float: left;
+        }
+
+        .imgFileUploade .header span.imgTitle {
+            line-height: 50px;
+        }
+
+        .imgFileUploade .header span.imgTitle b {
+            color: red;
+            margin: 0 5px;
+            line-height: 57px;
+            display: block;
+            float: right;
+            font-size: 20px;
+        }
+
+        .imgFileUploade .header span.imgClick {
+            width: 50px;
+            height: 50px;
+            margin-left: 10px;
+            cursor: pointer;
+            background: url({% static 'picture/addUpload.png' %}) no-repeat center center;
+            background-size: cover;
+        }
+
+        .imgFileUploade .header span.imgcontent {
+            color: #999;
+            margin-left: 120px;
+            line-height: 50px;
+        }
+
+        .imgFileUploade .imgAll {
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .imgFileUploade .imgAll ul:after {
+            visibility: hidden;
+            display: block;
+            font-size: 0;
+            content: ".";
+            clear: both;
+            height: 0
+        }
+
+        .imgFileUploade .imgAll li {
+            width: 100px;
+            height: 100px;
+            border: solid 1px #ccc;
+            margin: 8px 5px;
+            float: left;
+            position: relative;
+            box-shadow: 0 0 10px #eee;
+        }
+
+        .imgFileUploade .imgAll li img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .delImg {
+            position: absolute;
+            top: -10px;
+            right: -7px;
+            width: 22px;
+            height: 22px;
+            background: #000;
+            border-radius: 50%;
+            display: block;
+            text-align: center;
+            line-height: 22px;
+            color: #fff;
+            font-weight: 700;
+            font-style: normal;
+            cursor: pointer;
+        }
+
+        .box2 {
+            border: solid 1px #ccc;
+        }
+    </style>
+
+{% endblock topfiles %}
+
+{% block body %}
+    <!--名称框-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 name-top">
+        <div>
+            <h2>发布商品信息</h2>
+        </div>
+    </div>
+    <!--修改信息表单-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <form method="post" action="{% url 'goods:issue' %}" enctype="multipart/form-data" id="issue">
+            {% csrf_token %}
+            <div class="form-group good_form">
+                <label for="title">商品标题</label>
+                <input type="text" class="form-control" name='title' id="title" placeholder="商品标题">
+            </div>
+            <div class="form-group good_form">
+                <label for="add">发布地点</label>
+                <div id="target" class="row">
+                    <div class="col-md-4 col-sm-4"><select class="form-control" data-province="---- 选择省 ----"
+                                                           name="province"></select></div>
+                    <div class="col-md-4 col-sm-4"><select class="form-control" data-city="---- 选择市 ----"
+                                                           name="city"></select></div>
+                    <div class="col-md-4 col-sm-4"><select class="form-control" data-district="---- 选择区 ----"
+                                                           name="district"></select></div>
+                </div>
+            </div>
+            <div class="form-group good_form">
+                <label for="gtype">商品类型</label>
+                <select name="gtype" id="gtype" class="form-control">
+                    <option value="">---全部类型---</option>
+                    {% for type in gtype %}
+                        <option value="{{ type.id }}">{{ type.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group good_form">
+                <label for="editor1">商品详情</label>
+                <textarea name='gcontent' id="editor1" class="form-control"></textarea>
+            </div>
+            <div class="form-group good_form">
+                <label for="price">商品价格</label>
+                <input type="text" class="form-control" name="price" id="price" placeholder="商品价格">
+            </div>
+            <div class="form-group good_form">
+                <label for="condition">商品成色</label>
+                <select name="condition" id="condition" class="form-control">
+                    <option value="">---商品成色---</option>
+                    {% for fi in fin %}
+                        <option value="{{ fi.id }}">{{ fi.value }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group good_form">
+                <label for="picture">上传图片</label>
+                <div class="box2" style="width:auto;margin:10px auto"></div>
+                <div class="row" id="uploadImage">
+                </div>
+            </div>
+            <div class="form-group good_form" style="text-align: center">
+                <input type="submit" class="btn btn-primary form-control" value="发布" id="tj" onclick="tjclick(this)">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <p style="text-align: center;color: red">{{ msg }}</p>
+    </div>
+    <script src="{% static 'js/imgFileupload.js' %}"></script>
+    <script>
+        var imgFile1 = new ImgUploadeFiles('.box2', function (e) {
+            this.init({
+                MAX: 9,
+                MH: 1800, //像素限制高度
+                MW: 1900, //像素限制宽度
+                callback: function (arr) {
+                    console.log(arr)
+                }
+            });
+        });
+    </script>
+    <script>
+        $(function () {
+            $('#target').distpicker();
+            CKEDITOR.replace('editor1', {uiColor: '#9AB8F3'});
+            var precapital;
+            $('#price').on('focus', function () {
+                if (this.value === '0.00') {
+                    this.value = '';
+                } else {
+                    this.value = this.value.replace(/\.00/, '').replace(/(\.\d)0/, '$1');
+                }
+                precapital = this.value;
+            });
+            $('#price').on('keyup', function () {
+
+                this.value = this.value.replace(/^[\.]/, '').replace(/[^\d.]/g, '');
+                if (this.value.split(".").length - 1 > 1) {
+                    this.value = precapital;
+                }
+                precapital = this.value;
+            });
+            $('#price').on('blur', function () {
+                this.value = this.value.replace(/[\.]$/, '');
+                this.value = this.value.replace(/(.*)\.([\d]{2})(\d*)/g, '$1.$2');
+                this.value = Number(this.value).toFixed(2);
+                var logNum = this.value.toString();
+                if (logNum.match(/\./g) != null) {
+                    integerNum = parseInt(logNum).toString().replace(/\d(?=(\d{3})+$)/g, '$&,');
+                    decimalNum = '.' + logNum.replace(/(.*)\.(.*)/g, '$2');
+                } else {
+
+                }
+            });
+        });
+    </script>
+{% endblock body %}

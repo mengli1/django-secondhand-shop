@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}关于我们{% endblock title %}
+{% block topfiles %}
+    <style>
+
+        .title-top {
+            padding-top: 60px;
+        }
+
+        .panel-p p {
+            text-align: center;
+        }
+
+        .regard-span {
+            text-align: center;
+        }
+
+        .footer-content {
+            margin-top: 20px;
+            border-top: 1px solid;
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        .foot_link a {
+            color: #5e5e5e;
+        }
+    </style>
+{% endblock topfiles %}
+{% block body %}
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 title-top">
+        <div class="panel panel-success">
+            <div class="panel-heading" style="text-align: center">
+                <h1 class="panel-title">关于我们</h1>
+            </div>
+            <div class="panel-body panel-p">
+                <p>郑州余物交易网站是一个为郑州市民提供的一个安全、方便、快捷的余物闲置物品交易平台和余物闲置信息发布网站。</p>
+            </div>
+            <div class="panel-body">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        服务协议
+                    </div>
+                    <div class="panel-body">
+                        <p>
+                            郑州余物交易网站致力于为您提供最优质、最便捷的服务。在访问郑州余物交易网站的同时，也请您仔细阅读我们的协议条款。您需要同意该条款才能注册成为我们的用户。一经注册，将视为接受并遵守该条款的所有约定。</p>
+                        <p>1．用户应按照郑州余物交易网站的注册、登陆程序和相应规则进行注册、登陆，注册信息应真实可靠，信息内容如有变动应及时更新。</p>
+                        <p>2．用户应在适当的栏目或地区发布信息，所发布信息内容必须真实可靠，不得违反郑州余物交易网站对发布信息的禁止性规定。用户对其自行发表、上传或传送的内容负全部责任。</p>
+                        <p>
+                            3．遵守中华人民共和国相关法律法规，包括但不限于《中华人民共和国计算机信息系统安全保护条例》、《计算机软件保护条例》、《最高人民法院关于审理涉及计算机网络著作权纠纷案件适用法律若干问题的解释(法释[2004]1号)》、《互联网电子公告服务管理规定》、《互联网新闻信息服务管理规定》、《互联网著作权行政保护办法》和《信息网络传播权保护条例》等有关计算机互联网规定和知识产权的法律和法规、实施办法。</p>
+                        <p>4．所有用户不得在郑州余物交易网站任何版块发布、转载、传送含有下列内容之一的信息，否则郑州余物交易网站有权自行处理并不通知用户：</p>
+                        (1)违反宪法确定的基本原则的；
+                        (2)危害国家安全，泄漏国家机密，颠覆国家政权，破坏国家统一的；
+                        (3)损害国家荣誉和利益的；
+                        (4)煽动民族仇恨、民族歧视，破坏民族团结的；
+                        (5)破坏国家宗教政策，宣扬邪教和封建迷信的；
+                        (6)散布淫秽、色情、赌博、暴力、恐怖或者教唆犯罪的；
+                        (7)侮辱或者诽谤他人，侵害他人合法权益的；
+                        (8)含有法律、行政法规禁止的其他内容的。
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        联系方式
+                    </div>
+                    <div class="panel-body">
+                        <p>QQ:2761006009</p>
+                        <p>Email:rxw@163.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        友情链接
+                    </div>
+                    <div class="panel-body raw">
+                        <div class="col-md-4 col-sm-4 regard-span"><a href="https://www.baidu.com">百度</a></div>
+                        <div class="col-md-4 col-sm-4 regard-span"><a href="https://www.djangoproject.com/">Django</a>
+                        </div>
+                        <div class="col-md-4 col-sm-4 regard-span"><a href="https://www.bootcss.com/">Bootstrap</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <div class="footer-content">
+                <div class="foot_link">
+                    <a href="{% url 'goods:regard' %}">关于我们</a>
+                    <span>|</span>
+                    <a href="{% url 'goods:regard' %}">联系我们</a>
+                    <span>|</span>
+                    <a href="{% url 'goods:regard' %}">友情链接</a>
+                </div>
+                <p>CopyRight © 2016 All Rights Reserved</p>
+                <p>电话：010-****888 京ICP备*******8号</p>
+            </div>
+        </div>
+
+    </footer>
+
+{% endblock body %}

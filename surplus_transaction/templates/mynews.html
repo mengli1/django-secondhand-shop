@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}我的消息{% endblock title %}
+{% block topfiles %}
+    <style>
+        .name-top {
+            padding-top: 50px;
+        }
+
+        .name-top h2 {
+            text-align: center;
+            font-style: italic;
+        }
+
+        #title_text {
+            width: 100px;
+            display: block;
+            overflow: hidden;
+            word-break: keep-all;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            margin: 0 auto;
+        }
+    </style>
+{% endblock topfiles %}
+{% block body %}
+    <!--名称框-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 name-top">
+        <div>
+            <h2>我的消息</h2>
+        </div>
+    </div>
+    <!--选项栏-->
+    <div class="row options">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <ul class="nav nav-tabs nav-justified">
+                {% if new_type == 1 %}
+                    <li role="presentation" class="notice active" onclick="notice_click(this)"><a
+                            href="{% url 'user:info' %}?type=1">商品留言</a></li>
+                    <li role="presentation" class="notice" onclick="notice_click(this)"><a
+                            href="{% url 'user:info' %}?type=0">公告留言</a></li>
+                {% else %}
+                    <li role="presentation" class="notice" onclick="notice_click(this)"><a
+                            href="{% url 'user:info' %}?type=1">商品留言</a></li>
+                    <li role="presentation" class="notice active" onclick="notice_click(this)"><a
+                            href="{% url 'user:info' %}?type=0">公告留言</a></li>
+                {% endif %}
+            </ul>
+        </div>
+
+    </div>
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <table class="table table-striped">
+            <thead class="table-head">
+            <tr>
+                <th>留言</th>
+                <th>留言用户</th>
+                <th>留言时间</th>
+                <th>留言操作</th>
+            </tr>
+            </thead>
+            <tbody class="table-body">
+                {% for message in data_page %}
+                    <tr>
+                        {% if new_type %}
+                            <td><a id="title_text"
+                                   href="{% url 'goods:detail' %}?id={{ message.goods.id }}">{{ message.leave_message}}</a>
+                            </td>
+                        {% else %}
+                            <td><a id="title_text"
+                                   href="{% url 'notice:detail' %}?id={{ message.notice.id }}">{{ message.message }}</a>
+                            </td>
+                        {% endif %}
+                        <td>{{ message.user.username }}</td>
+                        <td>{{ message.update_time }}</td>
+                            {% if new_type %}
+                                <td><a href="{% url 'goods:detail' %}?id={{ message.goods.id }}" class="btn btn-info">回复</a>
+                                    <a href="{% url 'goods:ignore' %}?id={{ message.id }}" class="btn btn-danger">忽略</a></td>
+                            {% else %}
+                                <td><a href="{% url 'notice:detail' %}?id={{ message.notice.id }}" class="btn btn-info">回复</a>
+                                    <a href="{% url 'notice:ignore' %}?id={{ message.id }}" class="btn btn-danger">忽略</a></td>
+                            {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <!--分页-->
+    {% if length %}
+        <div class="col-md-12 col-sm-12" style="text-align: center">
+            <nav aria-label="...">
+                <ul class="pagination">
+                    {% if data_page.has_previous %}
+                        <li>
+                            <a href="{% url 'user:info' %}?type={{ new_type }}&page={{ data_page.previous_page_number }}">
+                                上一页
+                            </a></li>
+                    {% endif %}
+                    {% for pindex in pages %}
+                        {% if pindex == data_page.number %}
+                            <li class="active"><a
+                                    href="{% url 'user:info' %}?type={{ new_type }}&page={{ pindex }}"
+                            >{{ pindex }}</a></li>
+                        {% else %}
+                            <li>
+                                <a href="{% url 'user:info' %}?type={{ new_type }}&page={{ pindex }}">{{ pindex }}</a>
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if data_page.has_next %}
+                        <li>
+                            <a href="{% url 'user:info' %}?type={{ new_type }}&page={{ data_page.next_page_number }}">下一页</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    {% endif %}
+{% endblock body %}

@@ -1,0 +1,24 @@
+{% extends 'base_usercenter.html' %}
+{% load staticfiles %}
+
+{% block detail %}
+    <div><a href="#" title="头像"><img data-src="holder.js/200x200" class="img-circle" alt="200x200"
+                                     src="{{ settings }}{{ user.head_portrait }}" data-holder-rendered="true" title="头像"
+                                     style="width: 200px; height: 200px;"></a></div>
+    <table class="user-table">
+        <tr>
+            <td>用户名：</td>
+            <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+            <td>邮&nbsp;&nbsp;&nbsp;箱：</td>
+            <td>{{ user.email }}</td>
+        </tr>
+    </table>
+    <div class="user-button">
+        <button type="button" class="btn btn-default btn-sm" style="width: 100px"><a href="{% url 'user:alterinfo' %}">编辑信息</a>
+        </button>
+        <button type="button" class="btn btn-default btn-sm" style="width: 100px"><a href="{% url 'user:alterpass' %}">修改密码</a>
+        </button>
+    </div>
+{% endblock detail %}

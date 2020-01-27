@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}修改公告{% endblock title %}
+
+{% block topfiles %}
+    <script src="{% static 'js/ckeditor/ckeditor-init.js' %}"></script>
+    <script src="{% static 'js/ckeditor/ckeditor/ckeditor.js' %}"></script>
+
+{% endblock topfiles %}
+
+{% block body %}
+    <!--名称框-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 name-top">
+        <div>
+            <h2>修改公告信息</h2>
+        </div>
+    </div>
+    <!--修改信息表单-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <form method="post" action="{% url 'notice:alter' %}" enctype="multipart/form-data" id="issue">
+            {% csrf_token %}
+            <div class="form-group good_form">
+                <label for="title">公告标题</label>
+                <input type="text" class="form-control" name='title' id="title" placeholder="商品标题"
+                       value="{{ data.title }}">
+            </div>
+            <div class="form-group good_form">
+                <label for="editor1">公告内容</label>
+                <textarea name='gcontent' id="editor1" class="form-control">{% autoescape off %}
+                    {{ data.detail }}{% endautoescape %}</textarea>
+            </div>
+            <input type="hidden" class="form-control" name='id' value="{{ data.id }}">
+            <div class="form-group good_form" style="text-align: center">
+                <input type="submit" class="btn btn-primary form-control" value="提交" id="tj" onclick="tjclick(this)">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <p style="text-align: center;color: red">{{ msg }}</p>
+    </div>
+    <script>
+        $(function () {
+            CKEDITOR.replace('editor1', {uiColor: '#9AB8F3'});
+        })
+    </script>
+{% endblock body %}

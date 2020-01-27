@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}修改用户信息{% endblock title %}
+
+{% block topfiles %}
+
+{% endblock topfiles %}
+
+{% block body %}
+    <!--名称框-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 name-top">
+        <div>
+            <h2>修改用户信息</h2>
+        </div>
+    </div>
+    <!--修改信息表单-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+        <form method="post" action="{% url 'user:alterinfo' %}" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="form-group good_form">
+                <label for="username">用户名</label>
+                <input type="text" class="form-control" name='username' id="username" placeholder="用户名"
+                       value="{{ user.username }}">
+            </div>
+            <div class="form-group good_form">
+                <label for="email">用户邮箱</label>
+                <input type="email" class="form-control" name='email' id="email" placeholder="用户邮箱"
+                       value="{{ user.email }}">
+            </div>
+            <div class="form-group good_form">
+                <label for="head">用户头像</label>
+                <input type="file" name="file" id="head" onchange="image(this)" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg">
+                <div style="margin: 0 auto;width:200px"><img data-src="holder.js/200x200" class="img-circle" data-holder-rendered="true"  title="头像" style="width: 200px;height: 200px" id="upLoadImg" src="{{ settings }}{{ user.head_portrait }}" /></div>
+            </div>
+            <input type="hidden" class="form-control" name='id' value="{{ user.id }}">
+            <div class="form-group good_form" style="text-align: center">
+                <input type="submit" class="btn btn-warning form-control" value="提交" id="tj">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <p style="text-align: center;color: red">{{ msg }}</p>
+    </div>
+    <script>
+    function image(img) {
+			var file = img.files[0];
+			//获取一个指向该元素的地址
+			var path = window.URL.createObjectURL(file);
+			console.log(path);
+			$("#upLoadImg").attr('src', path);
+		}
+    </script>
+{% endblock body %}

@@ -1,0 +1,35 @@
+{% extends 'base_login.html' %}
+{% block title %}找回密码{% endblock title %}
+
+{% block body %}
+<section class="signin signup">
+    <div class="container">
+
+        <div class="sign-content">
+            <h2>找回密码</h2>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="signin-form">
+                        <form action="{% url 'user:retrieve' %} " method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="username">用户名</label>
+                                <input type="text" class="form-control" id="username" name="username" placeholder="用户名">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">邮箱</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="请输入正确邮箱">
+                            </div>
+                            <div class="signin-footer">
+                                <input type="submit" class="btn signin_btn btn-block" value="找回密码">
+                                <p>{{ errmsg }}</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}

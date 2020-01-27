@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}商品{% endblock title %}
+{% block topfiles %}
+    <style>
+        .name-top {
+            padding-top: 30px;
+        }
+
+        .name-top p {
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .head-classify {
+            text-align: center;
+            border-bottom: 5px solid #97a0ba;
+            margin-bottom: 5px;
+            font-size: 15px;
+            margin-top: 10px;
+        }
+    </style>
+{% endblock topfiles %}
+{% block body %}
+    <!--名称框-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 name-top">
+        <div class="raw name-top">
+            <div class="col-md-2 col-sm-2">
+                <form method="get" action="{% url 'goods:search' %}">
+                    <div class="input-group" style="margin-top:0;">
+                        <input type="text" class="form-control" placeholder="商品关键词" name="q"/>
+                        <span class="input-group-btn"> <input type="submit"  class="btn btn-info btn-search" name="" value="搜索"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-10 col-sm-2">
+                <p>商品</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--选项栏-->
+    <div class="raw option-left">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <div class="col-md-2 col-sm-2" style="">
+                <div class="head-classify">商品分类</div>
+                <div class="list-group">
+                    {% for typ in types %}
+                        {% if typ.type.id == type.id %}
+                            <a href="{% url 'goods:good_list' %}?type_id={{ typ.type.id }}&page=1"
+                               class="list-group-item active">
+                        {% else %}
+                            <a href="{% url 'goods:good_list' %}?type_id={{ typ.type.id }}&page=1"
+                               class="list-group-item">
+                        {% endif %}
+                    <span class="badge">{{ typ.number }}</span>{{ typ.type.name }}
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-md-10 col-sm-10">
+                {% for data in data_list %}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="thumbnail">
+                            <img data-src="holder.js/100%x200" alt="100%x200"
+                                 src="{{ settings }}{{ data.data.image }}"
+                                 data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
+                            <div class="caption">
+                                <h3 class="title_h3">{{ data.data.goods.title }}</h3>
+                                <p class="price_p">￥{{ data.data.goods.price }}</p>
+                                <p><a href="{% url 'goods:detail' %}?id={{ data.data.goods.id }}"
+                                      class="btn btn-default"
+                                      role="button">查看详情</a></p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    {% if data.love_status == '1' %}
+                                        <a><img src="{% static '/img/love_red.png' %}" alt="取消收藏" title="取消收藏"
+                                                style="width:20px;height: 20px" onclick='love_click(this,
+                                                "{% static 'img/love.png' %}","{% static 'img/love_red.png' %}","{% url 'goods:collect' %}","{{ data.data.goods.id }}")'>
+                                        </a>
+                                    {% else %}
+                                        <a><img src="{% static '/img/love.png' %}" alt="收藏" title="收藏"
+                                                style="width:20px;height: 20px" onclick='love_click(this,
+                                                "{% static 'img/love.png' %}","{% static 'img/love_red.png' %}","{% url 'goods:collect' %}","{{ data.data.goods.id }}")'></a>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <a href="{% url 'goods:detail' %}?id={{ data.data.goods.id }}#comment"><img
+                                            src="{% static 'img/comment.png' %}" alt="留言" title="留言"
+                                            style="width:20px;height: 20px"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!--            分页-->
+                <div class="col-md-12 col-sm-12" style="text-align: center">
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            {% if data_page.has_previous %}
+                                <li>
+                                    <a href="{% url 'goods:good_list' %}?type_id={{ type.id }}&page={{ data_page.previous_page_number }}">
+                                        上一页
+                                    </a></li>
+                            {% endif %}
+                            {% for pindex in pages %}
+                                {% if pindex == data_page.number %}
+                                    <li class="active"><a
+                                            href="{% url 'goods:good_list' %}?type_id={{ type.id }}&page={{ pindex }}"
+                                    >{{ pindex }}</a></li>
+                                {% else %}
+                                    <li>
+                                        <a href="{% url 'goods:good_list' %}?type_id={{ type.id }}&page={{ pindex }}">{{ pindex }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if data_page.has_next %}
+                                <li>
+                                    <a href="{% url 'goods:good_list' %}?type_id={{ type.id }}&page={{ data_page.next_page_number }}">下一页</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/ajax.js' %}"></script>
+{% endblock body %}

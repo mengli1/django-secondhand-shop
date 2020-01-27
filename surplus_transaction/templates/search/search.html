@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}商品搜索{% endblock title %}
+{% block topfiles %}
+    <style>
+        .name-top {
+            padding-top: 30px;
+        }
+
+        .name-top p {
+            text-align: center;
+            font-size: 20px;
+        }
+    </style>
+{% endblock topfiles %}
+{% block body %}
+    <!--名称框-->
+    <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 name-top">
+        <div class="raw name-top">
+            <div>
+                <form method="get" action="{% url 'goods:search' %}">
+                    <div class="input-group" style="margin-top:0;">
+                        <input type="text" class="form-control" placeholder="商品关键词" name="q" value="{{ query }}"/>
+                        <span class="input-group-btn"> <input type="submit" class="btn btn-info btn-search" name=""
+                                                              value="搜索"></span>
+                    </div>
+                </form>
+            </div>
+            <div>
+                <p>商品搜索结果：</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!--选项栏-->
+    <div class="raw">
+        <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+            <div>
+                {% for data in object_list %}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="thumbnail">
+                            <img data-src="holder.js/100%x200" alt="100%x200"
+                                 src="{{ settings }}{{ data.data.image }}"
+                                 data-holder-rendered="true" style="height: 200px; width: 100%; display: block;">
+                            <div class="caption">
+                                <h3 class="title_h3">{{ data.data.goods.title }}</h3>
+                                <p class="price_p">￥{{ data.data.goods.price }}</p>
+                                <p><a href="{% url 'goods:detail' %}?id={{ data.data.goods.id }}"
+                                      class="btn btn-default"
+                                      role="button">查看详情</a></p>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6">
+                                    {% if data.love_status == '1' %}
+                                        <a><img src="{% static '/img/love_red.png' %}" alt="取消收藏" title="取消收藏"
+                                                style="width:20px;height: 20px" onclick='love_click(this,
+                                                "{% static 'img/love.png' %}","{% static 'img/love_red.png' %}","{% url 'goods:collect' %}","{{ data.data.goods.id }}")'>
+                                        </a>
+                                    {% else %}
+                                        <a><img src="{% static '/img/love.png' %}" alt="收藏" title="收藏"
+                                                style="width:20px;height: 20px" onclick='love_click(this,
+                                                "{% static 'img/love.png' %}","{% static 'img/love_red.png' %}","{% url 'goods:collect' %}","{{ data.data.goods.id }}")'></a>
+                                    {% endif %}
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <a href="{% url 'goods:detail' %}?id={{ data.data.goods.id }}#comment"><img
+                                            src="{% static 'img/comment.png' %}" alt="评论" title="评论"
+                                            style="width:20px;height: 20px"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <!--            分页-->
+                <div class="col-md-12 col-sm-12" style="text-align: center">
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            {% if page_obj.has_previous %}
+                                <li>
+                                    <a href="{% url 'goods:search' %}?q={{ query }}&page={{ page_obj.previous_page_number }}">
+                                        上一页
+                                    </a></li>
+                            {% endif %}
+                            {% for pindex in pages %}
+                                {% if pindex == page_obj.number %}
+                                    <li class="active"><a
+                                            href="{% url 'goods:search' %}?q={{ query }}&page={{ pindex }}"
+                                    >{{ pindex }}</a></li>
+                                {% else %}
+                                    <li>
+                                        <a href="{% url 'goods:search' %}?q={{ query }}&page={{ pindex }}">{{ pindex }}</a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if page_obj.has_next %}
+                                <li>
+                                    <a href="{% url 'goods:search' %}?q={{ query }}&page={{ page_obj.next_page_number }}">下一页</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+   <script src="{% static 'js/ajax.js' %}"></script>
+{% endblock body %}
