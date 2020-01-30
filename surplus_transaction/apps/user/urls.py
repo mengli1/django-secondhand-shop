@@ -1,7 +1,7 @@
 from django.urls import path, register_converter
 from apps.user.views import LoginView, RegisterView, ActiveView, RetrieveView, SetPasswordView, LogoutView, InfoView, \
     UserCenterView, UserAlterInfoView, AlterPasswordView, UserGoodsView, UserNoticeView, UserAddrView, UserOrderView, \
-    AlterAddrView, CreateAddrView, DeleteAddrView, DefaultAddrView
+    AlterAddrView, CreateAddrView, DeleteAddrView, DefaultAddrView, CollectView
 from apps.user.converters import ActiveConverter
 from django.contrib.auth.decorators import login_required
 
@@ -25,5 +25,6 @@ urlpatterns = [
     path('center/defaultaddr/', login_required(DefaultAddrView.as_view()), name='defaddr'),
     path('center/alteraddr/', login_required(AlterAddrView.as_view()), name='altaddr'),
     path('center/createaddr/', login_required(CreateAddrView.as_view()), name='creaddr'),
-    path('center/myorders', login_required(UserOrderView.as_view()), name='myorders')
+    path('center/myorders/', login_required(UserOrderView.as_view()), name='myorders'),
+    path('center/mycollect/', login_required(CollectView.as_view()), name='mycollect')
 ]

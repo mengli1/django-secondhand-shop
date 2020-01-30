@@ -10,7 +10,7 @@ from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
 
 from apps.user.models import User, Address
-from apps.goods.models import Goods, GoodsLeaveMessage
+from apps.goods.models import Goods, GoodsLeaveMessage, Collect
 from apps.notice.models import NoticeMessage, Notice
 from apps.order.models import OrderInfo
 from celery_task.tasks import send_register_active_email, send_retrieve_email
@@ -538,3 +538,13 @@ class UserOrderView(View):
         context['option'] = 3
         context['otype'] = otype
         return render(request, 'userorders.html', context)
+
+
+# /user/center/collect/
+class CollectView(View):
+    def get(self, request):
+        goods = Collect.objects.filter(user=request.user, is_delete=0).order_by('-update_time')
+        page = request.GET.get('page')
+        context = public_page(goods, page, 8)
+        context['option'] = 5
+        return render(request, 'usercollect.html', context)

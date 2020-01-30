@@ -77,6 +77,32 @@ function love_click(obj, s_url, sr_url, q_url, id) {
     });
 }
 
+function collect_click(obj, q_url, id) {
+    var lstatus = 0;
+    $(function () {
+        $.ajax({
+            type: 'get',
+            url: q_url,
+            dataType: "json",
+            data: {
+                "id": id,
+                "status": lstatus
+            },
+            success: function (data) { //返回json结果
+                if (data.status === '1') {
+                    alert("收藏成功");
+                } else {
+                    alert("取消收藏成功");
+                    window.location.reload();
+                }
+            },
+            error: function () {
+                alert('1.网络错误，请稍后再试！\n2.如未登录，请先登录！');
+            }
+        });
+    });
+}
+
 function mes_click(obj, q_url, id) {
     var lstatus;
     var message = $(".mess").val();

@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="" />
+    <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/usercollect.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/whoosh_index/goods/MAIN_lc2g6fls25f9xb8f.seg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/whoosh_index/goods/MAIN_yhgmt9h0fk4s40u5.seg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surplus_transaction/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/surplus_transaction/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surplus_transaction/utils/fdfs/client.conf" beforeDir="false" afterPath="$PROJECT_DIR$/surplus_transaction/utils/fdfs/client.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_usercenter.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_usercenter.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/usergoods.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/usergoods.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/MAIN_36munys30aji0ln1.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/MAIN_bdidxxwfbmvrzabi.seg" beforeDir="false" afterPath="$PROJECT_DIR$/whoosh_index/goods/MAIN_zjnxlw2z78oo7wu0.seg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/MAIN_xei6qd52ve340jf4.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/_MAIN_33.toc" beforeDir="false" afterPath="$PROJECT_DIR$/whoosh_index/goods/_MAIN_38.toc" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +41,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1UxdVCNiqzqRy5cwlGVCnWALerf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -32,25 +54,26 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/templates" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps\order" />
-      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps" />
-      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\templates" />
-      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\surplus_transaction\utils" />
-      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\static\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\templates" />
       <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps\order" />
       <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\static\img" />
       <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction" />
       <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps\notice" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps\order" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\templates" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\surplus_transaction\utils" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\static\js" />
     </key>
   </component>
   <component name="RunManager" selected="JavaScript Debug.index.html">
@@ -119,7 +142,8 @@
       <workItem from="1580026331524" duration="6710000" />
       <workItem from="1580033139684" duration="19576000" />
       <workItem from="1580106327336" duration="2464000" />
-      <workItem from="1580108807116" duration="8232000" />
+      <workItem from="1580108807116" duration="10105000" />
+      <workItem from="1580281489803" duration="6773000" />
     </task>
     <servers />
   </component>
@@ -135,6 +159,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579614098555" />
+    <state x="499" y="110" key="CommitChangelistDialog2" timestamp="1580380495658">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="499" y="110" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580380495658" />
     <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1579854260025">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

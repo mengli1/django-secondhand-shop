@@ -104,9 +104,6 @@ class OrderCommitView(View):
                 transaction.savepoint_rollback(save_id)
                 return JsonResponse({'res': 6, 'errmsg': '商品已售出'})
 
-            good.status = 1
-            good.save()
-
             order.price = good.price
             order.save()
         except Exception as e:
@@ -253,6 +250,8 @@ class OrderCheckView(View):
                 # 获取支付宝交易号
                 trade_no = response.get('trade_no')
                 # 更新订单状态
+                order.goods.status=1
+                order.goods.save()
                 order.trade_no = trade_no
                 order.order_status = 2  # 待发货
                 order.save()

@@ -226,7 +226,7 @@ DEFAULT_FILE_STORAGE = 'surplus_transaction.utils.fdfs.storage.FDFSStorage'
 # 设置fdfs使用的client.conf文件路径
 FDFS_CLIENT_CONF = './surplus_transaction/utils/fdfs/client.conf'
 # 设置fdfs的服务器访问路径
-FDFS_URL = 'http://192.168.248.129:8888'
+FDFS_URL = 'http://94.191.126.93:8888'
 # 设置未登录跳转url
 LOGIN_URL = '/user/login/'
 # 让authenticate不关联is_active

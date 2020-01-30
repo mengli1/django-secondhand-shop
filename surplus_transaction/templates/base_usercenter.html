@@ -51,6 +51,7 @@
                     <li role="presentation" id="mynotice"><a href="{% url 'user:mynotices' %}">我的公告</a></li>
                     <li role="presentation" id="myorder"><a href="{% url 'user:myorders' %}">我的订单</a></li>
                     <li role="presentation" id="myaddr"><a href="{% url 'user:myaddrs' %}">收货地址</a></li>
+                    <li role="presentation" id="mycollect"><a href="{% url 'user:mycollect' %}">我的收藏</a></li>
                 </ul>
             </div>
             <div class="col-md-10 col-sm-10">
@@ -76,6 +77,10 @@
                 case 4:
                     $('#myaddr').addClass('active');
                     break;
+                case 5:
+                    $('#mycollect').addClass('active');
+                    break;
+
             }
         })
     </script>
