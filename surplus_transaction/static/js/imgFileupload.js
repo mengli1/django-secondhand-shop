@@ -140,7 +140,7 @@
 		var _self = this;
 		this.dom = document.createElement('li');
 		this.dom.innerHTML = 
-							'    <img src="http://192.168.248.129:8888/group1/M00/00/00/wKj4gV4nwwuAH1JPAAAhi1op4SQ381.gif" alt="" data-src="'+this.imgSrc +'" class="imsg">'+
+							'    <img src="http://94.191.126.93:8888/group1/M00/00/00/wKj4gV4nwwuAH1JPAAAhi1op4SQ381.gif" alt="" data-src="'+this.imgSrc +'" class="imsg">'+
 							'    <i class="delImg">'+
 							'        X'+
 							'    </i>';
