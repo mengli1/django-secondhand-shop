@@ -7,7 +7,7 @@ from db.base_model import BaseModel
 
 class User(AbstractUser, BaseModel):
     '''用户表'''
-    head_portrait = models.ImageField(upload_to='head', default='group1/M00/00/00/wKj4gV4jxYSAIpfuAAADj51SOaA880.png',
+    head_portrait = models.ImageField(upload_to='head', default='group1/M00/00/00/rB4AC14zm7OAAyEZAAADj51SOaA057.png',
                                       verbose_name="头像路径")
 
     class Meta:

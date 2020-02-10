@@ -54,7 +54,7 @@ class GoodsImage(BaseModel):
     '''商品图片模型类'''
     goods = models.ForeignKey('Goods', verbose_name='商品', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='goods', verbose_name='图片路径',
-                              default="group1/M00/00/00/wKj4gV4ls86AP8SuAAA6Lr96DVk744.jpg")
+                              default="group1/M00/00/00/rB4AC14zm-mAIjmGAAA6Lr96DVk593.jpg")
 
     class Meta:
         db_table = 'st_goods_images'
@@ -77,7 +77,7 @@ class GoodsLeaveMessage(BaseModel):
     status = models.SmallIntegerField(default=0, choices=status_reply, verbose_name='留言状态')
 
     class Meta:
-        db_table = 'st_goods_leave_message'
+        db_table = 'st_goods_message'
         verbose_name = '商品留言'
         verbose_name_plural = verbose_name
 

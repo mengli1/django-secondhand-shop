@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="">
+    <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="修改js文件">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/goods/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/goods/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/order/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/order/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/imgFileupload.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/imgFileupload.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surplus_transaction/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/surplus_transaction/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/addrcreate.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addrcreate.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ordercomment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ordercomment.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orderplace.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orderplace.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/MAIN_lc2g6fls25f9xb8f.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/MAIN_yhgmt9h0fk4s40u5.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/MAIN_zjnxlw2z78oo7wu0.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/_MAIN_38.toc" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,12 +142,46 @@
       <workItem from="1580033139684" duration="19576000" />
       <workItem from="1580106327336" duration="2464000" />
       <workItem from="1580108807116" duration="10105000" />
-      <workItem from="1580281489803" duration="7174000" />
+      <workItem from="1580281489803" duration="30878000" />
+      <workItem from="1581167068365" duration="891000" />
+      <workItem from="1581180443577" duration="4986000" />
     </task>
+    <task id="LOCAL-00001" summary="修改js文件">
+      <created>1580380943229</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1580380943229</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修改js文件">
+      <created>1580380977289</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1580380977290</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改js文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改js文件" />
   </component>
   <component name="WindowStateProjectService">
     <state x="669" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580032624116">
@@ -143,14 +192,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579614098555" />
-    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1580380976617">
+    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1580541266212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580380976617" />
-    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1579854260025">
+    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580541266212" />
+    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1581183864745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579854260025" />
+    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581183864745" />
     <state x="823" y="81" key="SettingsEditor" timestamp="1580120523322">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -26,7 +26,11 @@
                 <dt>寄送到：</dt>
                 <input type="hidden" name="addr_id" value="{{ addr.id }}" checked>{{ addr.addr }} （{{ addr.receiver }}收） {{ addr.phone }}
             </dl>
-            <a href="{% url 'user:altaddr' %}?id={{ addr.id }}" class="btn btn-info">编辑收货地址</a>
+            {% if addr  %}
+                <a href="{% url 'user:altaddr' %}?id={{ addr.id }}" class="btn btn-info">编辑收货地址</a>
+            {% else %}
+                <a href="{% url 'user:myaddrs' %}" class="btn btn-success">创建收货地址</a>
+            {% endif %}
         </div>
     </div>
     <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">

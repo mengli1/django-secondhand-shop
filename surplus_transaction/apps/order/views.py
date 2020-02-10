@@ -22,7 +22,10 @@ class OrderPlaceView(View):
         if not g_id:
             return render(request, 'skippage.html', {'msg': '违法操作！'})
         user = User.objects.get(id=request.user.id)
-        addr = Address.objects.get(user=user, is_default=1)
+        try:
+            addr = Address.objects.get(user=user, is_default=1)
+        except Exception:
+            addr=None
         good = Goods.objects.get(id=g_id)
         img = GoodsImage.objects.filter(goods=good, is_delete=0).order_by('-update_time')[0]
         transit_price = 10

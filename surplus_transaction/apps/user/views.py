@@ -85,7 +85,7 @@ class RegisterView(View):
         if len(username) < 5 or len(username) > 20:
             return render(request, 'register.html', {'errmsg': '用户名长度为(5~20)'})
         # 校验邮箱
-        if not re.match(r'^[a-z0-9][\w.\-]*@[a-z0-9\-]+(\.[a-z]{2,5}){1,2}$', email):
+        if not re.match(r'^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$', email):
             return render(request, 'register.html', {'errmsg': '邮箱不合法'})
         if len(password) < 8 or len(password) > 20:
             return render(request, 'register.html', {'errmsg': '密码不安全(8~20)'})
