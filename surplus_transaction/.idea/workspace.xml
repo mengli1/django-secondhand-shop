@@ -170,7 +170,7 @@
       <workItem from="1582945629284" duration="926000" />
       <workItem from="1582956610039" duration="444000" />
       <workItem from="1583235103713" duration="48000" />
-      <workItem from="1585047107221" duration="15903000" />
+      <workItem from="1585047107221" duration="16164000" />
     </task>
     <task id="LOCAL-00001" summary="修改js文件">
       <created>1580380943229</created>
@@ -193,7 +193,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585099891158</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="【新增】登录和注册页面图片验证码功能">
+      <created>1585100127016</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1585100127016</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -226,10 +233,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579614098555" />
-    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1585099890257">
+    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1585100126337">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585099890257" />
+    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585100126337" />
     <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1581183864745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
