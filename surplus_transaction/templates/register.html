@@ -45,6 +45,14 @@
                                     <span class="error_tip">提示信息</span>
                                 </div>
                                 <div class="form-group">
+                                    <label for="authcode">图片验证码</label>
+                                    <input type="text" class="form-control" id="authcode" name="authcode"
+                                           placeholder="验证码">
+                                    <div style="margin: 20px"><img src="{% url 'user:authcode' %}" alt="验证码"
+                                                                   onclick="image_click(this,'{% url 'user:authcode' %}')">
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <input class="styled-checkbox" id="checkbox" name="checkbox" type="checkbox">
                                     <label for="checkbox">接受注册协议</label>
                                     <div></div>
@@ -65,4 +73,5 @@
             </div>
         </div>
     </section>
+    <script src="{% static 'js/ajax.js' %}"></script>
 {% endblock body %}

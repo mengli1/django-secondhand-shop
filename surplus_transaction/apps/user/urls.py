@@ -1,7 +1,7 @@
 from django.urls import path, register_converter
 from apps.user.views import LoginView, RegisterView, ActiveView, RetrieveView, SetPasswordView, LogoutView, InfoView, \
     UserCenterView, UserAlterInfoView, AlterPasswordView, UserGoodsView, UserNoticeView, UserAddrView, UserOrderView, \
-    AlterAddrView, CreateAddrView, DeleteAddrView, DefaultAddrView, CollectView
+    AlterAddrView, CreateAddrView, DeleteAddrView, DefaultAddrView, CollectView, AuthCodeView
 from apps.user.converters import ActiveConverter
 from django.contrib.auth.decorators import login_required
 
@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 register_converter(ActiveConverter, 'ser')
 urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
+    path('authcode/', AuthCodeView.as_view(), name='authcode'),
     path('register/', RegisterView.as_view(), name='register'),
     path('active/<ser:token>', ActiveView.as_view(), name='active'),
     path('retrieve/', RetrieveView.as_view(), name='retrieve'),

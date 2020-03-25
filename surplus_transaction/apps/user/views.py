@@ -1,4 +1,5 @@
 import re
+import uuid
 
 from django.shortcuts import render, redirect, reverse, HttpResponse
 from django.views import View
@@ -8,7 +9,7 @@ from django.db.models import Q
 from django.http.response import JsonResponse
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
-
+from django_redis import get_redis_connection
 from apps.user.models import User, Address
 from apps.goods.models import Goods, GoodsLeaveMessage, Collect
 from apps.notice.models import NoticeMessage, Notice
@@ -16,6 +17,23 @@ from apps.order.models import OrderInfo
 from celery_task.tasks import send_register_active_email, send_retrieve_email
 from apps.public_function import public_page, public_user_match
 from surplus_transaction.utils.fdfs.storage import FDFSStorage
+from apps.user.auth_code import ValidCodeImg
+
+
+# 图片验证码
+class AuthCodeView(View):
+    def get(self, request):
+        img = ValidCodeImg()
+        data, valid_str = img.getValidCodeImg()
+        uuid_id = uuid.uuid4()
+        try:
+            img_conn = get_redis_connection('auth_code')
+            img_conn.setex(str(uuid_id), 60 * 3, valid_str)
+        except Exception as e:
+            data = "网络错误"
+        response = HttpResponse(data)
+        response.set_cookie('uuid', uuid_id, max_age=60 * 3)
+        return response
 
 
 # 登录视图
@@ -35,7 +53,19 @@ class LoginView(View):
         # 接收数据
         username = request.POST.get('username')
         password = request.POST.get('password')
-        if not all([username, password]):
+        auth_code = request.POST.get('authcode')
+        uuid_id = request.COOKIES['uuid']
+        if len(auth_code) != 5:
+            return render(request, 'login.html', {'errmsg': '验证码不正确'})
+        conn = get_redis_connection('auth_code')
+        try:
+            value = conn.get(uuid_id)
+            result = re.match(value.decode('utf-8'), auth_code, re.I)
+        except KeyError:
+            return render(request, 'login.html', {'errmsg': '验证码过期，请重新输入！'})
+        if not result:
+            return render(request, 'login.html', {'errmsg': '验证码不正确'})
+        if not all([username, password, auth_code]):
             return render(request, 'login.html', {'errmsg': '数据不完整'})
         user = authenticate(username=username, password=password)
         if user is not None:
@@ -77,7 +107,20 @@ class RegisterView(View):
         email = request.POST.get('email')
         con_password = request.POST.get('con_password')
         checkbox = request.POST.get('checkbox')
+        auth_code = request.POST.get('authcode')
+        uuid_id = request.COOKIES['uuid']
 
+        # 验证码处理
+        if len(auth_code) != 5:
+            return render(request, 'register.html', {'errmsg': '验证码不正确'})
+        conn = get_redis_connection('auth_code')
+        try:
+            value = conn.get(uuid_id)
+            result = re.match(value.decode('utf-8'), auth_code, re.I)
+        except KeyError:
+            return render(request, 'register.html', {'errmsg': '验证码过期，请重新输入！'})
+        if not result:
+            return render(request, 'register.html', {'errmsg': '验证码不正确'})
         # 进行数据校验
         if not all([username, password, con_password, email]):
             return render(request, 'register.html', {'errmsg': '数据不完整'})

@@ -131,6 +131,10 @@ function mes_click(obj, q_url, id) {
     });
 }
 
+function image_click(obj, q_url) {
+    $(obj).attr('src', q_url + '?' + Math.random());
+}
+
 function replay_click(obj) {
     $("#message").children("input:last").removeClass("mess");
     $(".message2").children("input").removeClass("mess");
