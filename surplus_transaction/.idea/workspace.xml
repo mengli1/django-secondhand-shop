@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="修改js文件">
+    <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/ajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surplus_transaction/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/surplus_transaction/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/register.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +27,13 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/mengli1/django-secondhand-shop.git" />
+      </set>
+    </option>
   </component>
   <component name="ProjectId" id="1UxdVCNiqzqRy5cwlGVCnWALerf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -170,7 +170,7 @@
       <workItem from="1582945629284" duration="926000" />
       <workItem from="1582956610039" duration="444000" />
       <workItem from="1583235103713" duration="48000" />
-      <workItem from="1585047107221" duration="15650000" />
+      <workItem from="1585047107221" duration="15903000" />
     </task>
     <task id="LOCAL-00001" summary="修改js文件">
       <created>1580380943229</created>
@@ -186,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580380977290</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="【新增】登录和注册页面图片验证码功能">
+      <created>1585099891158</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1585099891158</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +214,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改js文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改js文件" />
+    <MESSAGE value="【新增】登录和注册页面图片验证码功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="【新增】登录和注册页面图片验证码功能" />
   </component>
   <component name="WindowStateProjectService">
     <state x="669" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580032624116">
@@ -218,10 +226,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579614098555" />
-    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1580541266212">
+    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1585099890257">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1580541266212" />
+    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585099890257" />
     <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1581183864745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
