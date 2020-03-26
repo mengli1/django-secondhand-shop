@@ -7,6 +7,7 @@ from django.conf import settings
 from django.contrib.auth import authenticate, login, logout
 from django.db.models import Q
 from django.http.response import JsonResponse
+# from django.contrib.auth.hashers import check_password
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from itsdangerous import SignatureExpired
 from django_redis import get_redis_connection
@@ -67,6 +68,35 @@ class LoginView(View):
             return render(request, 'login.html', {'errmsg': '验证码不正确'})
         if not all([username, password, auth_code]):
             return render(request, 'login.html', {'errmsg': '数据不完整'})
+        # # 邮箱和用户名均可登录判断（数据库邮箱不唯一时使用）
+        # try:
+        #     user = User.objects.get(Q(username=username) | Q(email=username))
+        #     pwd = user.password
+        #     if check_password(password, pwd):
+        #         if user.is_delete:
+        #             return render(request, 'login.html', {'errmsg': '账户已被注销！'})
+        #         if user.is_active:
+        #             # 用户已激活
+        #             # 用户是不是管理员
+        #             # 记录用户的登录状态
+        #             login(request, user)
+        #             # 跳转首页
+        #             response = redirect(reverse('goods:index'))
+        #             # 判断是否记住用户名
+        #             checkbox = request.POST.get('checkbox')
+        #             if checkbox == 'on':
+        #                 # 记住用户名
+        #                 response.set_cookie('username', username, max_age=3600)
+        #             else:
+        #                 response.delete_cookie('username')
+        #             # 返回response
+        #             return response
+        #         else:
+        #             # 用户未激活
+        #             return render(request, 'login.html', {'errmsg': '账户未激活'})
+        #     raise Exception
+        # except:
+        #     return render(request, 'login.html', {'errmsg': '用户名或密码错误'})
         user = authenticate(username=username, password=password)
         if user is not None:
             if user.is_delete:
@@ -146,6 +176,14 @@ class RegisterView(View):
             user = None
         if user:
             return render(request, 'register.html', {'errmsg': '用户名已存在'})
+
+        # # 校验邮箱是否已经使用
+        # try:
+        #     user = User.objects.get(emial=email)
+        # except:
+        #     user = None
+        # if user:
+        #     return render(request, 'register.html', {'errmsg': '邮箱已使用'})
         # 进行业务处理: 进行用户注册
         user = User.objects.create_user(username, email, password)
         user.is_active = 0

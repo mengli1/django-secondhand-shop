@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +171,8 @@
       <workItem from="1582945629284" duration="926000" />
       <workItem from="1582956610039" duration="444000" />
       <workItem from="1583235103713" duration="48000" />
-      <workItem from="1585047107221" duration="16164000" />
+      <workItem from="1585047107221" duration="17029000" />
+      <workItem from="1585192987726" duration="2085000" />
     </task>
     <task id="LOCAL-00001" summary="修改js文件">
       <created>1580380943229</created>
@@ -200,7 +202,21 @@
       <option name="project" value="LOCAL" />
       <updated>1585100127016</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="【新增】登录和注册页面图片验证码功能">
+      <created>1585100315833</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1585100315833</updated>
+    </task>
+    <task id="LOCAL-00006" summary="【新增】登录和注册页面图片验证码功能">
+      <created>1585100420692</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1585100420692</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -233,10 +249,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579614098555" />
-    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1585100315164">
+    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1585100420000">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585100315164" />
+    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585100420000" />
     <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1581183864745">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -257,14 +273,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1583235150905" />
+    <state x="694" y="242" key="RollbackChangesDialog" timestamp="1585100562539">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="694" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585100562539" />
     <state x="823" y="81" key="SettingsEditor" timestamp="1580120523322">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="823" y="81" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1580120523322" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585099734646">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585100425872">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585099734646" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585100425872" />
     <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1580106727295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
