@@ -179,7 +179,7 @@ class RegisterView(View):
 
         # # 校验邮箱是否已经使用
         # try:
-        #     user = User.objects.get(emial=email)
+        #     user = User.objects.get(email=email)
         # except:
         #     user = None
         # if user:
