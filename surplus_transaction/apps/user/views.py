@@ -61,6 +61,7 @@ class LoginView(View):
         conn = get_redis_connection('auth_code')
         try:
             value = conn.get(uuid_id)
+            conn.delete(uuid_id)
             result = re.match(value.decode('utf-8'), auth_code, re.I)
         except KeyError:
             return render(request, 'login.html', {'errmsg': '验证码过期，请重新输入！'})
@@ -146,6 +147,7 @@ class RegisterView(View):
         conn = get_redis_connection('auth_code')
         try:
             value = conn.get(uuid_id)
+            conn.delete(uuid_id)
             result = re.match(value.decode('utf-8'), auth_code, re.I)
         except KeyError:
             return render(request, 'register.html', {'errmsg': '验证码过期，请重新输入！'})

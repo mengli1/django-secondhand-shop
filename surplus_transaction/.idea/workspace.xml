@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/surplus_transaction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/surplus_transaction.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +69,7 @@
       <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.1">
+  <component name="RunManager" selected="Django server.surplus_transaction">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/surplus_transaction/templates/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -172,6 +174,27 @@
       <workItem from="1583235103713" duration="48000" />
       <workItem from="1585047107221" duration="17029000" />
       <workItem from="1585192987726" duration="2441000" />
+      <workItem from="1585195441252" duration="373000" />
+      <workItem from="1585360149902" duration="75000" />
+      <workItem from="1585360803322" duration="41000" />
+      <workItem from="1585401378143" duration="1166000" />
+      <workItem from="1585402836218" duration="819000" />
+      <workItem from="1585403663573" duration="1064000" />
+      <workItem from="1585405459930" duration="823000" />
+      <workItem from="1585406654570" duration="1041000" />
+      <workItem from="1585407795824" duration="178000" />
+      <workItem from="1585407985055" duration="38000" />
+      <workItem from="1585408030880" duration="242000" />
+      <workItem from="1585408592208" duration="271000" />
+      <workItem from="1585409164884" duration="973000" />
+      <workItem from="1585411739568" duration="347000" />
+      <workItem from="1585415206579" duration="78000" />
+      <workItem from="1585415684512" duration="188000" />
+      <workItem from="1585454436377" duration="413000" />
+      <workItem from="1585454891297" duration="1128000" />
+      <workItem from="1585456213329" duration="6000" />
+      <workItem from="1585456222908" duration="1000" />
+      <workItem from="1585456228497" duration="308000" />
     </task>
     <task id="LOCAL-00001" summary="修改js文件">
       <created>1580380943229</created>
@@ -222,7 +245,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585195298638</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="【新增】实现邮箱和用户名登录">
+      <created>1585195610829</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1585195610829</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +278,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="【新增】实现邮箱和用户名登录" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585405479968">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585405479968" />
     <state x="669" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580032624116">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -256,14 +290,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579614098555" />
-    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1585195297993">
+    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1585195610225">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585195297993" />
-    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1581183864745">
+    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585195610225" />
+    <state x="427" y="135" key="EnvironmentVariablesDialog" timestamp="1585406930233">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581183864745" />
+    <state x="427" y="135" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585406930233" />
+    <state x="260" y="278" key="FileChooserDialogImpl" timestamp="1585454462534">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="260" y="278" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1585454462534" />
     <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1583235150905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -284,14 +322,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="694" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585100562539" />
-    <state x="823" y="81" key="SettingsEditor" timestamp="1580120523322">
+    <state x="194" y="16" key="SettingsEditor" timestamp="1585454468600">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="823" y="81" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1580120523322" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585195306901">
+    <state x="194" y="16" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585454468600" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585195612352">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585195306901" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585195612352" />
     <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1580106727295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
