@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/surplus_transaction.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/surplus_transaction.iml" afterDir="false" />
+    <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="【修改】验证码验证逻辑">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apps/user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/user/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +49,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static/fonts" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -194,7 +192,7 @@
       <workItem from="1585454891297" duration="1128000" />
       <workItem from="1585456213329" duration="6000" />
       <workItem from="1585456222908" duration="1000" />
-      <workItem from="1585456228497" duration="308000" />
+      <workItem from="1585456228497" duration="605000" />
     </task>
     <task id="LOCAL-00001" summary="修改js文件">
       <created>1580380943229</created>
@@ -252,7 +250,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585195610829</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="【修改】验证码验证逻辑">
+      <created>1585456564978</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1585456564978</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -275,7 +280,8 @@
     <MESSAGE value="修改js文件" />
     <MESSAGE value="【新增】登录和注册页面图片验证码功能" />
     <MESSAGE value="【新增】实现邮箱和用户名登录" />
-    <option name="LAST_COMMIT_MESSAGE" value="【新增】实现邮箱和用户名登录" />
+    <MESSAGE value="【修改】验证码验证逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="【修改】验证码验证逻辑" />
   </component>
   <component name="WindowStateProjectService">
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585405479968">
@@ -290,10 +296,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579614098555" />
-    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1585195610225">
+    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1585456841266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585195610225" />
+    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585456841266" />
     <state x="427" y="135" key="EnvironmentVariablesDialog" timestamp="1585406930233">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -322,14 +328,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="694" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585100562539" />
-    <state x="194" y="16" key="SettingsEditor" timestamp="1585454468600">
+    <state x="194" y="16" key="SettingsEditor" timestamp="1585456754083">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="194" y="16" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585454468600" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585195612352">
+    <state x="194" y="16" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585456754083" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585456570910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585195612352" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585456570910" />
     <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1580106727295">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
