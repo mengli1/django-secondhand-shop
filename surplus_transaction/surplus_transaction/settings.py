@@ -190,7 +190,7 @@ EMAIL_PORT = 25
 # 发送邮件的邮箱
 EMAIL_HOST_USER = 'rxwniupi@163.com'
 # 在邮箱中设置的客户端授权密码
-EMAIL_HOST_PASSWORD = '159397rxw'
+EMAIL_HOST_PASSWORD = 'TOTATMMXYPTDCQHQ'
 # 收件人看到的发件人
 EMAIL_FROM = '郑州余物交易网<rxwniupi@163.com>'
 

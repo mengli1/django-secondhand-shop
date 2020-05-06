@@ -99,7 +99,7 @@
                     <span class="price-span">￥{{ good_detail.price }}</span>
                     <form action="{% url 'order:place' %}" method="post">
                         {% csrf_token %}
-                        {% if good_detail.status == 0 %}
+                        {% if not good_detail.status %}
                             <input type="hidden" name="id" value="{{ good_detail.id }}">
                             <input type="submit" class="btn btn-primary form-control" value="购买">
                         {% else %}

@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="809bb2a5-bb2d-4306-86b5-0f37aaa1f69b" name="Default Changelist" comment="【修改】验证码验证逻辑">
+      <change beforePath="$PROJECT_DIR$/../readme.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../readme.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.txt" beforeDir="false" afterPath="$PROJECT_DIR$/package.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/surplus_transaction/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/surplus_transaction/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/gooddetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/gooddetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/orderplace.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/orderplace.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/MAIN_182od1lyt2o5a4hl.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/MAIN_2tfasb3qvl0r3z6z.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/MAIN_d6tw910svhx9dt1g.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/MAIN_dbej1yieyzgdpjsv.seg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whoosh_index/goods/_MAIN_79.toc" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,9 +21,6 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="surplus_transaction" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -39,26 +46,19 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/static/fonts" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps\order" />
-      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps" />
-      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\templates" />
-      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\surplus_transaction\utils" />
-      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\static\js" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\static\fonts" />
       <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\templates" />
@@ -66,8 +66,15 @@
       <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\static\img" />
       <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps\order" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\apps" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\templates" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\surplus_transaction\utils" />
+      <recent name="C:\Users\rxw\Desktop\毕业设计\project\surplus_transaction\static\js" />
+    </key>
   </component>
-  <component name="RunManager" selected="Django server.surplus_transaction">
+  <component name="RunManager" selected="Django Server.surplus_transaction">
     <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/surplus_transaction/templates/index.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -122,18 +129,6 @@
         <item itemvalue="JavaScript Debug.index.html" />
       </list>
     </recent_temporary>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -192,7 +187,31 @@
       <workItem from="1585454891297" duration="1128000" />
       <workItem from="1585456213329" duration="6000" />
       <workItem from="1585456222908" duration="1000" />
-      <workItem from="1585456228497" duration="605000" />
+      <workItem from="1585456228497" duration="711000" />
+      <workItem from="1585457047620" duration="2160000" />
+      <workItem from="1585616097010" duration="1102000" />
+      <workItem from="1585981665195" duration="22000" />
+      <workItem from="1585988349629" duration="99000" />
+      <workItem from="1586499355883" duration="631000" />
+      <workItem from="1586503048569" duration="288000" />
+      <workItem from="1586503404881" duration="275000" />
+      <workItem from="1586503696905" duration="46000" />
+      <workItem from="1586583643669" duration="148000" />
+      <workItem from="1586758834586" duration="18000" />
+      <workItem from="1586837669505" duration="89000" />
+      <workItem from="1586839554970" duration="345000" />
+      <workItem from="1586949131031" duration="10358000" />
+      <workItem from="1586971654838" duration="3740000" />
+      <workItem from="1587007365002" duration="1147000" />
+      <workItem from="1587009516987" duration="1767000" />
+      <workItem from="1587012231109" duration="2048000" />
+      <workItem from="1587435316811" duration="28000" />
+      <workItem from="1587436730738" duration="172000" />
+      <workItem from="1587436926860" duration="16000" />
+      <workItem from="1587711867138" duration="4647000" />
+      <workItem from="1588419731785" duration="160000" />
+      <workItem from="1588757348266" duration="3789000" />
+      <workItem from="1588765301160" duration="820000" />
     </task>
     <task id="LOCAL-00001" summary="修改js文件">
       <created>1580380943229</created>
@@ -257,24 +276,30 @@
       <option name="project" value="LOCAL" />
       <updated>1585456564978</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="【修改】验证码验证逻辑">
+      <created>1585456855760</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1585456855760</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="修改js文件" />
@@ -288,18 +313,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585405479968" />
-    <state x="669" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1580032624116">
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1586503202367">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="669" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1580032624116" />
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1579614098555">
+    <state x="640" y="255" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586503202367" />
+    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1588762045118">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579614098555" />
-    <state x="607" y="105" key="CommitChangelistDialog2" timestamp="1585456841266">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1585456841266" />
+    <state x="607" y="105" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1588762045118" />
     <state x="427" y="135" key="EnvironmentVariablesDialog" timestamp="1585406930233">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -328,50 +349,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="694" y="242" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1585100562539" />
-    <state x="194" y="16" key="SettingsEditor" timestamp="1585456754083">
+    <state x="359" y="75" width="998" height="708" key="SettingsEditor" timestamp="1586583776774">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="194" y="16" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1585456754083" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1585456570910">
+    <state x="359" y="75" width="998" height="708" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586583776774" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1588761999398">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1585456570910" />
-    <state x="953" y="0" width="974" height="1047" key="dock-window-1" timestamp="1580106727295">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="953" y="0" width="974" height="1047" key="dock-window-1/0.0.1920.1040@0.0.1920.1040" timestamp="1580106727295" />
-    <state x="817" y="133" width="1080" height="686" maximized="true" key="dock-window-2" timestamp="1580106288272">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="817" y="133" width="1080" height="686" maximized="true" key="dock-window-2/0.0.1920.1040@0.0.1920.1040" timestamp="1580106288272" />
-    <state x="0" y="441" width="1893" height="686" key="dock-window-3" timestamp="1579858579031">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="0" y="441" width="1893" height="686" key="dock-window-3/0.0.1920.1040@0.0.1920.1040" timestamp="1579858579031" />
-    <state x="825" y="390" width="1353" height="739" key="dock-window-4" timestamp="1579693339143">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="825" y="390" width="1353" height="739" key="dock-window-4/0.0.1920.1040@0.0.1920.1040" timestamp="1579693339143" />
-    <state x="520" y="222" width="974" height="1047" key="dock-window-5" timestamp="1580106292866">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="520" y="222" width="974" height="1047" key="dock-window-5/0.0.1920.1040@0.0.1920.1040" timestamp="1580106292866" />
-    <state x="301" y="80" width="974" height="1047" key="dock-window-6" timestamp="1579758854925">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="301" y="80" width="974" height="1047" key="dock-window-6/0.0.1920.1040@0.0.1920.1040" timestamp="1579758854925" />
-    <state x="195" y="80" width="974" height="1047" key="dock-window-7" timestamp="1579778718086">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="195" y="80" width="974" height="1047" key="dock-window-7/0.0.1920.1040@0.0.1920.1040" timestamp="1579778718086" />
-    <state x="288" y="283" width="1060" height="696" key="find.popup" timestamp="1579700314850">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="288" y="283" width="1060" height="696" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579700314850" />
-    <state x="1007" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1580102746245">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1007" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580102746245" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588761999398" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

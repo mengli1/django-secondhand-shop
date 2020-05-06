@@ -10,6 +10,7 @@ mysql5.7.26
 fastDFS分布式文件系统
 pip install -r package.txt
 # 启动celery
+python E:\Anaconda3\envs\Django2.2\Scripts\celery.exe -A celery_task.tasks worker --loglevel=info或
 celery -A celery_task.tasks worker  --loglevel=info
 # 初始化索引
 python manage.py rebuild_index
